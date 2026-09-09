@@ -15,6 +15,7 @@
 ```bash
 npm test             # Run all tests once
 npm run validate:content # Run the focused content gate
+npm run test:e2e        # Run isolated Chromium journeys
 npx vitest           # Watch during development
 npx vitest --coverage # Coverage after adding a coverage provider
 ```
@@ -88,13 +89,15 @@ npx vitest --coverage
 ## Test Types
 
 **Unit Tests:**
-- Editorial evidence, content safety invariants, withdrawal, situation coverage, daily selection, and scoring.
+- Editorial evidence, content safety invariants, withdrawal, situation coverage, daily selection, scoring, storage corruption, and version migration.
 
 **Integration Tests:**
 - `ScenarioPlayer` interaction through visible feelings, choices, consequence, and adult help.
 
 **E2E Tests:**
-- No committed framework; live Portal flows are manually verified with agent-browser.
+- Playwright runs profile persistence for both age bands, daily practice, urgent help, Toolbox persistence, parent access/reset, keyboard focus, and a 390 px overflow smoke test.
+- Tests use fresh browser contexts and roles, labels, visible names, and ARIA state instead of implementation-detail selectors.
+- CI retains traces and screenshots only when a browser test fails.
 
 ## Common Patterns
 

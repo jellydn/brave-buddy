@@ -26,7 +26,8 @@
 - React 19.2.8 and React DOM 19.2.8 - component UI and client state.
 
 **Testing:**
-- Vitest 5.0.0, Testing Library 16.3.3, jest-dom 7.0.1, and jsdom 30.0.1.
+- Vitest 5.0.0, Testing Library 16.3.3, jest-dom 7.0.1, and jsdom 30.0.1 for unit and component tests.
+- Playwright 1.63.0 with Chromium for browser end-to-end journeys.
 
 **Build/Dev:**
 - Vite 8.2.2 with `@vitejs/plugin-react` 6.1.1.
