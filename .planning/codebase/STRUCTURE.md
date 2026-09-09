@@ -6,8 +6,10 @@
 
 ```text
 project-root/
+├── .github/workflows/    # Pull-request validation and Pages deployment
 ├── .planning/codebase/ # Current codebase map
 ├── docs/               # Product, safety, and architecture decisions
+├── public/              # Static files copied into the production build
 ├── src/
 │   ├── components/     # Screen and feature components
 │   ├── content/        # Human-authored worlds and scenarios
@@ -47,6 +49,7 @@ project-root/
 **Configuration:**
 - `vite.config.ts`: Vite and Vitest.
 - `eslint.config.js`: TypeScript and React lint rules.
+- `.github/workflows/deploy-pages.yml`: Validation and GitHub Pages deployment.
 
 **Core Logic:**
 - `src/lib/scenarioEngine.ts`: Safety validation, missions, and progress.

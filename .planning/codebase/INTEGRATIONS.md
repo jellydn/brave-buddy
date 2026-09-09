@@ -34,10 +34,10 @@
 ## CI/CD & Deployment
 
 **Hosting:**
-- Development review uses an Amp orb Portal. The production build is host-neutral.
+- Development review uses an Amp orb Portal. Production deployment targets GitHub Pages at `brave-buddy.itman.fyi`.
 
 **CI Pipeline:**
-- None in the initial MVP.
+- `.github/workflows/deploy-pages.yml` validates pull requests and deploys `main` or manual runs with GitHub's Pages actions and OIDC.
 
 ## Environment Configuration
 

@@ -26,3 +26,7 @@ npm run build
 - This prototype does not claim legal, clinical, safeguarding, privacy, or accessibility compliance.
 
 See [the product and technical plan](docs/PRODUCT_TECHNICAL_PLAN.md) and [the safety and privacy review gates](docs/SAFETY_PRIVACY_REVIEW.md).
+
+## Deployment
+
+GitHub Actions validates pull requests and deploys `main` to GitHub Pages for `https://brave-buddy.itman.fyi`. See [the deployment guide](docs/DEPLOYMENT.md) for the required one-time Pages and DNS settings.

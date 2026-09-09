@@ -48,7 +48,7 @@
 - Browser state uses the versioned `sgk-mvp-v1` local-storage key.
 
 **Build:**
-- `vite.config.ts`, `tsconfig.json`, `tsconfig.app.json`, `tsconfig.node.json`, and `eslint.config.js`.
+- `vite.config.ts`, `tsconfig.json`, `tsconfig.app.json`, `tsconfig.node.json`, `eslint.config.js`, and `.github/workflows/deploy-pages.yml`.
 
 ## Platform Requirements
 
@@ -56,7 +56,7 @@
 - A current Node.js release and npm.
 
 **Production:**
-- Any static HTTPS host that supports an SPA entry document.
+- GitHub Pages with a root-path Vite build and the custom domain declared by `public/CNAME`.
 
 ---
 
