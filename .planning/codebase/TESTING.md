@@ -14,6 +14,7 @@
 **Run Commands:**
 ```bash
 npm test             # Run all tests once
+npm run validate:content # Run the focused content gate
 npx vitest           # Watch during development
 npx vitest --coverage # Coverage after adding a coverage provider
 ```
@@ -29,6 +30,7 @@ npx vitest --coverage # Coverage after adding a coverage provider
 **Structure:**
 ```text
 src/lib/scenarioEngine.test.ts
+src/content/scenarioValidation.test.ts
 src/components/ScenarioPlayer.test.tsx
 src/test/setup.ts
 ```
@@ -67,8 +69,8 @@ expect(complete).toHaveBeenCalledWith(scenario, expect.objectContaining({ id: 'm
 
 **Test Data:**
 ```typescript
-const source = scenarios.find((scenario) => scenario.requiresAdultHelp)!
-const unsafeCopy = { ...source, id: 'missing-help-path', choices: /* one targeted mutation */ }
+const scenario = copyScenario('bullying-repeated-exclusion')
+scenario.choices = scenario.choices.map((choice) => ({ ...choice, getsAdultHelp: false }))
 ```
 
 **Location:**
@@ -86,7 +88,7 @@ npx vitest --coverage
 ## Test Types
 
 **Unit Tests:**
-- Content safety invariants, situation coverage, daily selection, and scoring.
+- Editorial evidence, content safety invariants, withdrawal, situation coverage, daily selection, and scoring.
 
 **Integration Tests:**
 - `ScenarioPlayer` interaction through visible feelings, choices, consequence, and adult help.
@@ -103,7 +105,7 @@ await screen.findByText('expected content')
 
 **Error Testing:**
 ```typescript
-expect(validateScenarios([unsafeCopy])).toContain('missing-help-path: urgent scenario needs a helpful adult-escalation choice')
+expect(validateScenarios([scenario])).toContain(`${scenario.id}: urgent scenario needs a helpful adult-escalation choice`)
 ```
 
 ---

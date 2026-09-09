@@ -5,10 +5,10 @@
 ## Tech Debt
 
 **Content editorial workflow:**
-- Issue: Scenarios are reviewed in source control but have no formal reviewer or version metadata.
-- Files: `src/content/scenarios.ts`, `docs/SAFETY_PRIVACY_REVIEW.md`.
-- Impact: Content quality cannot yet be audited at production scale.
-- Fix approach: Define an expert review workflow before expanding or launching content.
+- Issue: The repository defines lifecycle and version metadata, but the MVP scenarios remain `draft` with no named expert approval.
+- Files: `src/content/scenarios.ts`, `docs/CONTENT_WORKFLOW.md`.
+- Impact: Structural checks are available, but the content is not ready for a responsible public launch.
+- Fix approach: Assign qualified reviewers and record completed review evidence before marking content approved or published.
 
 ## Known Bugs
 
@@ -43,7 +43,7 @@
 ## Fragile Areas
 
 **Safety-sensitive authored content:**
-- Files: `src/content/scenarios.ts`, `src/lib/scenarioEngine.ts`.
+- Files: `src/content/scenarios.ts`, `src/content/scenarioValidation.ts`.
 - Why fragile: Correctness depends on both safety flags and exact human wording.
 - Safe modification: Require expert review and run content validation tests for each change.
 - Test coverage: Structural escalation is tested; clinical and regional wording still needs expert review.

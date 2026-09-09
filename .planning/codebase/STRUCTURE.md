@@ -31,9 +31,9 @@ project-root/
 - Key files: `Home.tsx`, `ScenarioPlayer.tsx`, `ParentDashboard.tsx`.
 
 **`src/content/`:**
-- Purpose: Hold reviewed, extensible, human-authored learning material.
-- Contains: World metadata and scenario records.
-- Key files: `scenarios.ts`, `worlds.ts`.
+- Purpose: Hold extensible, human-authored learning material and its structural safety rules.
+- Contains: World metadata, the versioned scenario catalog, playable-content selection, and validation.
+- Key files: `scenarios.ts`, `scenarioValidation.ts`, `worlds.ts`.
 
 **`src/lib/`:**
 - Purpose: Hold UI-independent rules and persistence boundaries.
@@ -52,8 +52,9 @@ project-root/
 - `.github/workflows/deploy-pages.yml`: Validation and GitHub Pages deployment.
 
 **Core Logic:**
-- `src/lib/scenarioEngine.ts`: Safety validation, missions, and progress.
-- `src/content/scenarios.ts`: Curated content source.
+- `src/lib/scenarioEngine.ts`: Daily missions and progress.
+- `src/content/scenarios.ts`: Full catalog and playable-content selection.
+- `src/content/scenarioValidation.ts`: Editorial and structural safety validation.
 
 **Testing:**
 - `src/**/*.test.ts(x)`: Co-located tests.
