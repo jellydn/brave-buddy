@@ -116,4 +116,8 @@ export const scenarioCatalog: Scenario[] = [
   },
 ]
 
-export const scenarios = scenarioCatalog.filter((scenario) => scenario.editorial.status !== 'withdrawn')
+export function getPlayableScenarios(items: Scenario[]): Scenario[] {
+  return items.filter((scenario) => scenario.editorial.status !== 'withdrawn')
+}
+
+export const scenarios = getPlayableScenarios(scenarioCatalog)
