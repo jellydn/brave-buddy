@@ -2,30 +2,6 @@ import type { Completion, Scenario, Skill } from '../types'
 
 export const skillNames: Skill[] = ['Courage', 'Kindness', 'Calmness', 'Friendship', 'Safety']
 
-export function validateScenarios(items: Scenario[]): string[] {
-  const errors: string[] = []
-  const ids = new Set<string>()
-
-  for (const scenario of items) {
-    if (ids.has(scenario.id)) errors.push(`${scenario.id}: duplicate id`)
-    ids.add(scenario.id)
-    if (scenario.choices.length < 3 || scenario.choices.length > 4) {
-      errors.push(`${scenario.id}: must have 3–4 choices`)
-    }
-    if (!scenario.feelings.some((feeling) => feeling.id === scenario.likelyFeeling)) {
-      errors.push(`${scenario.id}: likely feeling is not offered`)
-    }
-    if (!scenario.choices.some((choice) => choice.quality === 'helpful')) {
-      errors.push(`${scenario.id}: needs a helpful choice`)
-    }
-    if (scenario.requiresAdultHelp && !scenario.choices.some((choice) => choice.quality === 'helpful' && choice.getsAdultHelp)) {
-      errors.push(`${scenario.id}: urgent scenario needs a helpful adult-escalation choice`)
-    }
-  }
-
-  return errors
-}
-
 export function getDailyScenarios(items: Scenario[], date: Date, count = 3): Scenario[] {
   if (items.length <= count) return items
   const day = Math.floor(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()) / 86_400_000)

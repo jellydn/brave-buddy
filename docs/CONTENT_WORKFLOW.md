@@ -46,3 +46,9 @@ Change the status to `withdrawn`, stop selecting the scenario in the application
 - **Release owner:** verifies recorded approval and controls publication or withdrawal.
 
 Named people and launch regions are not set in this repository. Project owners must assign them before any scenario is marked `approved` or `published`.
+
+## Automated checks
+
+Run `npm run validate:content` before review. CI runs the same command. It checks version and approval metadata, IDs, age-band text, choice structure, Toolbox strategies, adult-help paths, and selected clear retaliation or secrecy instructions in helpful responses.
+
+These checks find structural mistakes. They cannot decide whether wording is safe, suitable for an age group, culturally appropriate, or ready to publish. The expert review remains required.

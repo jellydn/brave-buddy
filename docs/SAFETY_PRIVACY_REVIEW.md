@@ -6,7 +6,7 @@ This document is a product checklist, not a compliance claim. The MVP is a local
 
 - All scenarios and outcomes are human-authored in `src/content/scenarios.ts`.
 - The content model marks urgent situations with `requiresAdultHelp`.
-- Automated validation requires each urgent scenario to include a helpful trusted-adult path.
+- Automated validation checks content structure, age-band text, clear unsafe instructions, and trusted-adult paths. It does not replace expert review.
 - Urgent feedback always says that the child does not need to solve the situation alone.
 - The app does not include chat, free-text role-play, uploads, advertising, analytics, or generative AI.
 - The profile requests only an age band, avatar, and nickname and tells the child not to use a real name.
