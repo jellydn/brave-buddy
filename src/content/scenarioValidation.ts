@@ -3,6 +3,7 @@ import type { AgeText, Choice, Scenario } from '../types'
 const ageGroups: (keyof AgeText)[] = ['6-8', '9-12']
 const unsafeRecommendationPatterns = [
   /\bkeep (?:it |this |that )?secret\b/i,
+  /\b(?:promise|agree).{0,20}\bnot to tell\b/i,
   /\b(?:fight|hit|hurt|insult|mock|threaten|humiliate|make fun of).{0,24}\bback\b/i,
 ]
 

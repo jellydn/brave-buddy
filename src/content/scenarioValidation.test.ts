@@ -60,6 +60,15 @@ describe('scenario content validation', () => {
     expect(validateScenarios([scenario])).toContain(`${scenario.id}.${helpful.id}: helpful choice contains a prohibited retaliation or secrecy instruction`)
   })
 
+  it('rejects a secrecy promise in a helpful response', () => {
+    const scenario = copyScenario('problems-pressure-dare')
+    const helpful = scenario.choices.find((choice) => choice.quality === 'helpful')
+    if (!helpful) throw new Error('Missing helpful test choice')
+    helpful.strategy = { '6-8': 'Ask a trusted adult.', '9-12': 'Agree not to tell anyone.' }
+
+    expect(validateScenarios([scenario])).toContain(`${scenario.id}.${helpful.id}: helpful choice contains a prohibited retaliation or secrecy instruction`)
+  })
+
   it('does not treat automated checks as expert approval', () => {
     const scenario = copyScenario('friends-party-upstander')
     scenario.editorial.status = 'approved'
