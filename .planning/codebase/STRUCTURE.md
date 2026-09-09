@@ -63,6 +63,9 @@ project-root/
 - `e2e/*.spec.ts`: Isolated browser journeys using accessible selectors.
 - `playwright.config.ts`: Chromium, local web server, retry, and failure-artifact settings.
 
+**Launch governance:**
+- `docs/LAUNCH_READINESS_REGISTER.md`: Unassigned expert decisions, required evidence, and hard gates for production and AI work.
+
 ## Naming Conventions
 
 **Files:**

@@ -67,6 +67,7 @@
 **Production safeguarding and consent operations:**
 - Problem: No disclosure channel, jurisdiction routing, verified consent, moderation, or incident process exists.
 - Blocks: Public launch and any user-generated or generative feature.
+- Tracking: `docs/LAUNCH_READINESS_REGISTER.md` lists the unassigned expert roles and evidence needed to remove each gate.
 
 ## Test Coverage Gaps
 
