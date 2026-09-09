@@ -3,7 +3,7 @@ import type { AgeText, Scenario } from '../types'
 const both = (text: string): AgeText => ({ '6-8': text, '9-12': text })
 const age = (younger: string, older: string): AgeText => ({ '6-8': younger, '9-12': older })
 
-export const scenarios: Scenario[] = [
+export const scenarioCatalog: Scenario[] = [
   {
     id: 'friends-playground-join', editorial: { version: 1, status: 'draft' }, world: 'friends', kind: 'misunderstanding', setting: 'Playground',
     title: 'Room in the rocket?', visual: { emoji: '🚀', label: 'Children playing a space game', accent: '#dff5e9' },
@@ -115,3 +115,5 @@ export const scenarios: Scenario[] = [
     ], requiresAdultHelp: true, skills: ['Courage', 'Kindness', 'Safety'], conversationPrompt: 'Why is it caring—not disloyal—to get adult help for a friend in danger?'
   },
 ]
+
+export const scenarios = scenarioCatalog.filter((scenario) => scenario.editorial.status !== 'withdrawn')
