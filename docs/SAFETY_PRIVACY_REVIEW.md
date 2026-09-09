@@ -20,7 +20,7 @@ This document is a product checklist, not a compliance claim. The MVP is a local
 - A qualified child safeguarding professional must review all scenario wording, escalation instructions, and outcome framing.
 - Define jurisdiction-specific routes for imminent danger, sexual abuse, serious abuse, and self-harm concerns.
 - Define what the product does when a child discloses real harm. The current app has no disclosure input.
-- Create an editorial workflow with named reviewers, content versions, and withdrawal procedures.
+- Apply the editorial workflow in `CONTENT_WORKFLOW.md`, then record named reviewers and approvals for each scenario.
 - Test age adaptations with children, caregivers, educators, and accessibility specialists.
 
 ### Privacy, consent, and retention

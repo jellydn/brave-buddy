@@ -2,7 +2,7 @@
 
 ## Product goal
 
-Create a short, playful practice experience for children aged 6–12. Children learn to **SEE → THINK → RESPOND → GET HELP** in common social situations. The app uses only reviewed, human-authored scenarios.
+Create a short, playful practice experience for children aged 6–12. Children learn to **SEE → THINK → RESPOND → GET HELP** in common social situations. The app uses only human-authored scenarios. Its current draft content still requires expert review before launch.
 
 ## MVP experience
 
