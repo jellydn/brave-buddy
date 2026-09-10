@@ -64,11 +64,14 @@ project-root/
 - `playwright.config.ts`: Chromium, local web server, retry, and failure-artifact settings.
 
 **Launch governance:**
-- `docs/LAUNCH_READINESS_REGISTER.md`: Unassigned expert decisions, required evidence, and hard gates for production and AI work.
+- `docs/LAUNCH_READINESS_REGISTER.md`: Singapore v1 ownership, redacted evidence identifiers, pending expert decisions, and hard gates for production and AI work.
 - `docs/SCENARIO_COVERAGE.md`: Point-in-time coverage evidence and prioritized content gaps.
 - `docs/adr/0002-keep-curated-content-in-typed-source.md`: Current authoring-format decision and reassessment triggers.
 - `docs/SUPPORTED_BROWSERS.md`: Automated and manual browser, device, and assistive-technology targets.
 - `docs/REACT_DOCTOR.md`: Pinned React static-analysis gate, privacy controls, and reviewed baseline warnings.
+- `docs/THREAT_MODEL_DRAFT.md`: Current assets, trust boundaries, controls, and unapproved residual risks.
+- `docs/INCIDENT_RESPONSE_DRAFT.md`: Non-approved response procedure, initial ownership, and remaining operational gates.
+- `SECURITY.md`: GitHub private vulnerability-reporting route and current response limits.
 
 ## Naming Conventions
 
