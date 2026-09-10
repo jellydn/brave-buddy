@@ -3,9 +3,9 @@ import type { AgeText, Scenario } from '../types'
 const both = (text: string): AgeText => ({ '6-8': text, '9-12': text })
 const age = (younger: string, older: string): AgeText => ({ '6-8': younger, '9-12': older })
 
-export const scenarios: Scenario[] = [
+export const scenarioCatalog: Scenario[] = [
   {
-    id: 'friends-playground-join', world: 'friends', kind: 'misunderstanding', setting: 'Playground',
+    id: 'friends-playground-join', editorial: { version: 1, status: 'draft' }, world: 'friends', kind: 'misunderstanding', setting: 'Playground',
     title: 'Room in the rocket?', visual: { emoji: '🚀', label: 'Children playing a space game', accent: '#dff5e9' },
     scene: age('Two kids are playing a space game. They do not hear you ask to join.', 'Two kids are busy making rules for a space game. Your first question to join gets missed.'),
     feelings: [{ id: 'left-out', emoji: '😕', label: 'Left out' }, { id: 'angry', emoji: '😠', label: 'Angry' }, { id: 'excited', emoji: '🤩', label: 'Excited' }], likelyFeeling: 'left-out',
@@ -16,7 +16,7 @@ export const scenarios: Scenario[] = [
     ], requiresAdultHelp: false, skills: ['Courage', 'Friendship'], conversationPrompt: 'What is one friendly way to join a game that has already started?'
   },
   {
-    id: 'friends-party-upstander', world: 'friends', kind: 'conflict', setting: 'Birthday Party',
+    id: 'friends-party-upstander', editorial: { version: 1, status: 'draft' }, world: 'friends', kind: 'conflict', setting: 'Birthday Party',
     title: 'A seat for everyone', visual: { emoji: '🎈', label: 'A birthday table with an open chair', accent: '#fff0cf' },
     scene: age('You see Sami standing alone while everyone picks a party game.', 'At a party, you notice Sami hovering near the group while teams are being chosen.'),
     feelings: [{ id: 'lonely', emoji: '😔', label: 'Lonely' }, { id: 'calm', emoji: '🙂', label: 'Calm' }, { id: 'silly', emoji: '🤪', label: 'Silly' }], likelyFeeling: 'lonely',
@@ -27,7 +27,7 @@ export const scenarios: Scenario[] = [
     ], requiresAdultHelp: false, skills: ['Kindness', 'Friendship', 'Courage'], conversationPrompt: 'How can you include someone without putting them on the spot?'
   },
   {
-    id: 'problems-marker-mixup', world: 'problems', kind: 'misunderstanding', setting: 'Classroom',
+    id: 'problems-marker-mixup', editorial: { version: 1, status: 'draft' }, world: 'problems', kind: 'misunderstanding', setting: 'Classroom',
     title: 'The missing marker', visual: { emoji: '🖍️', label: 'Two children near a box of art supplies', accent: '#e8ebff' },
     scene: age('Your favorite marker is gone. Noor has one that looks the same.', 'Your favorite marker is missing after art time. Noor is holding the same color and brand.'),
     feelings: [{ id: 'worried', emoji: '😟', label: 'Worried' }, { id: 'angry', emoji: '😠', label: 'Angry' }, { id: 'proud', emoji: '😌', label: 'Proud' }], likelyFeeling: 'worried',
@@ -38,7 +38,7 @@ export const scenarios: Scenario[] = [
     ], requiresAdultHelp: false, skills: ['Calmness', 'Friendship'], conversationPrompt: 'What can we say when we are not sure whether something was an accident?'
   },
   {
-    id: 'problems-pressure-dare', world: 'problems', kind: 'unsafe', setting: 'Sports Club',
+    id: 'problems-pressure-dare', editorial: { version: 1, status: 'draft' }, world: 'problems', kind: 'unsafe', setting: 'Sports Club',
     title: 'The risky dare', visual: { emoji: '🧗', label: 'A high equipment shelf at sports club', accent: '#e1f2ff' },
     scene: age('A teammate dares you to climb a tall equipment shelf when the coach is away.', 'A teammate pressures you to climb an equipment shelf and says you must keep it secret from the coach.'),
     feelings: [{ id: 'unsafe', emoji: '😰', label: 'Unsafe' }, { id: 'bored', emoji: '🥱', label: 'Bored' }, { id: 'happy', emoji: '😊', label: 'Happy' }], likelyFeeling: 'unsafe',
@@ -49,7 +49,7 @@ export const scenarios: Scenario[] = [
     ], requiresAdultHelp: true, skills: ['Courage', 'Safety'], conversationPrompt: 'Who are three trusted adults you can tell about an unsafe dare?'
   },
   {
-    id: 'teasing-voice', world: 'teasing', kind: 'teasing', setting: 'Canteen',
+    id: 'teasing-voice', editorial: { version: 1, status: 'draft' }, world: 'teasing', kind: 'teasing', setting: 'Canteen',
     title: 'Copying a voice', visual: { emoji: '🥪', label: 'Children talking at a lunch table', accent: '#ffebd6' },
     scene: age('A child copies the way you say a word and laughs.', 'A classmate imitates your voice or accent at lunch to get laughs.'),
     feelings: [{ id: 'hurt', emoji: '😣', label: 'Hurt' }, { id: 'sleepy', emoji: '😴', label: 'Sleepy' }, { id: 'excited', emoji: '🤩', label: 'Excited' }], likelyFeeling: 'hurt',
@@ -60,7 +60,7 @@ export const scenarios: Scenario[] = [
     ], requiresAdultHelp: false, skills: ['Courage', 'Calmness', 'Safety'], conversationPrompt: 'Practice a short boundary that feels natural to say.'
   },
   {
-    id: 'teasing-appearance-upstander', world: 'teasing', kind: 'teasing', setting: 'School Bus',
+    id: 'teasing-appearance-upstander', editorial: { version: 1, status: 'draft' }, world: 'teasing', kind: 'teasing', setting: 'School Bus',
     title: 'A kind upstander', visual: { emoji: '🚌', label: 'Children sitting on a school bus', accent: '#fff2ba' },
     scene: age('Someone makes an unkind comment about Jo’s looks. Jo goes quiet.', 'A student makes a shaming comment about Jo’s appearance. Jo looks uncomfortable and turns away.'),
     feelings: [{ id: 'embarrassed', emoji: '😳', label: 'Embarrassed' }, { id: 'relaxed', emoji: '😌', label: 'Relaxed' }, { id: 'curious', emoji: '🤔', label: 'Curious' }], likelyFeeling: 'embarrassed',
@@ -71,7 +71,7 @@ export const scenarios: Scenario[] = [
     ], requiresAdultHelp: false, skills: ['Courage', 'Kindness', 'Safety'], conversationPrompt: 'What can an upstander do without insulting or confronting anyone?'
   },
   {
-    id: 'bullying-repeated-exclusion', world: 'bullying', kind: 'bullying', setting: 'Playground',
+    id: 'bullying-repeated-exclusion', editorial: { version: 1, status: 'draft' }, world: 'bullying', kind: 'bullying', setting: 'Playground',
     title: 'It keeps happening', visual: { emoji: '⚽', label: 'A child beside a playground football game', accent: '#efe1ff' },
     scene: age('For many days, a group blocks you from every game and calls you names.', 'For two weeks, the same group has deliberately excluded you, called you names, and followed you when you leave.'),
     feelings: [{ id: 'unsafe', emoji: '😰', label: 'Unsafe' }, { id: 'hurt', emoji: '😣', label: 'Hurt' }, { id: 'happy', emoji: '😊', label: 'Happy' }], likelyFeeling: 'unsafe',
@@ -82,7 +82,7 @@ export const scenarios: Scenario[] = [
     ], requiresAdultHelp: true, skills: ['Courage', 'Safety'], conversationPrompt: 'Which adults could help if the first person you tell does not act?'
   },
   {
-    id: 'bullying-physical-threat', world: 'bullying', kind: 'unsafe', setting: 'School Bus',
+    id: 'bullying-physical-threat', editorial: { version: 1, status: 'draft' }, world: 'bullying', kind: 'unsafe', setting: 'School Bus',
     title: 'A threat on the bus', visual: { emoji: '🚏', label: 'A bus stop with a trusted driver nearby', accent: '#eadfff' },
     scene: age('A student says they will hit you after the bus ride.', 'A student makes a physical threat and says they will wait for you after you get off the bus.'),
     feelings: [{ id: 'unsafe', emoji: '😰', label: 'Unsafe' }, { id: 'amused', emoji: '😄', label: 'Amused' }, { id: 'bored', emoji: '🥱', label: 'Bored' }], likelyFeeling: 'unsafe',
@@ -93,7 +93,7 @@ export const scenarios: Scenario[] = [
     ], requiresAdultHelp: true, skills: ['Courage', 'Safety', 'Calmness'], conversationPrompt: 'Where are the safe adult spaces on your usual journey?'
   },
   {
-    id: 'help-online-secret', world: 'help', kind: 'unsafe', setting: 'Online World',
+    id: 'help-online-secret', editorial: { version: 1, status: 'draft' }, world: 'help', kind: 'unsafe', setting: 'Online World',
     title: 'An uncomfortable secret', visual: { emoji: '💬', label: 'A tablet with a warning shield', accent: '#ffe1e5' },
     scene: age('Someone online asks for a private picture and says to keep it secret.', 'An online contact asks for a private image, says you will be in trouble if you tell, and wants it kept secret.'),
     feelings: [{ id: 'unsafe', emoji: '😰', label: 'Unsafe' }, { id: 'confused', emoji: '😕', label: 'Confused' }, { id: 'proud', emoji: '😌', label: 'Proud' }], likelyFeeling: 'unsafe',
@@ -104,7 +104,7 @@ export const scenarios: Scenario[] = [
     ], requiresAdultHelp: true, skills: ['Courage', 'Safety'], conversationPrompt: 'What should a child do if an online message feels wrong or asks for secrecy?'
   },
   {
-    id: 'help-friend-self-harm', world: 'help', kind: 'unsafe', setting: 'Home',
+    id: 'help-friend-self-harm', editorial: { version: 1, status: 'draft' }, world: 'help', kind: 'unsafe', setting: 'Home',
     title: 'A friend needs help now', visual: { emoji: '☎️', label: 'A phone beside a caring adult', accent: '#ffe4e8' },
     scene: age('A friend says they might hurt themselves and makes you promise not to tell.', 'A friend messages that they may hurt themselves. They ask you to keep it secret.'),
     feelings: [{ id: 'worried', emoji: '😟', label: 'Worried' }, { id: 'relaxed', emoji: '😌', label: 'Relaxed' }, { id: 'silly', emoji: '🤪', label: 'Silly' }], likelyFeeling: 'worried',
@@ -115,3 +115,9 @@ export const scenarios: Scenario[] = [
     ], requiresAdultHelp: true, skills: ['Courage', 'Kindness', 'Safety'], conversationPrompt: 'Why is it caring—not disloyal—to get adult help for a friend in danger?'
   },
 ]
+
+export function getPlayableScenarios(items: Scenario[]): Scenario[] {
+  return items.filter((scenario) => scenario.editorial.status !== 'withdrawn')
+}
+
+export const scenarios = getPlayableScenarios(scenarioCatalog)

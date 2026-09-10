@@ -2,6 +2,7 @@ export type AgeGroup = '6-8' | '9-12'
 export type WorldId = 'friends' | 'problems' | 'teasing' | 'bullying' | 'help'
 export type ScenarioKind = 'misunderstanding' | 'conflict' | 'teasing' | 'bullying' | 'unsafe'
 export type Skill = 'Courage' | 'Kindness' | 'Calmness' | 'Friendship' | 'Safety'
+export type ReviewStatus = 'draft' | 'expert-review' | 'approved' | 'published' | 'withdrawn'
 
 export interface AgeText {
   '6-8': string
@@ -21,6 +22,12 @@ export interface Choice {
 
 export interface Scenario {
   id: string
+  editorial: {
+    version: number
+    status: ReviewStatus
+    reviewedBy?: string
+    reviewedAt?: string
+  }
   world: WorldId
   kind: ScenarioKind
   setting: string
