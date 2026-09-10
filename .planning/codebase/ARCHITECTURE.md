@@ -14,14 +14,14 @@
 ## Layers
 
 **Content and domain model:**
-- Purpose: Define worlds, scenarios, choices, age text, safety flags, and skills.
+- Purpose: Define worlds, scenarios, editorial state, safety flags, and structural content validation.
 - Location: `src/types.ts`, `src/content/`.
-- Contains: TypeScript records only.
+- Contains: Typed records, the full scenario catalog, playable-content selection, and pure validation rules.
 - Depends on: Shared types.
 - Used by: Logic and UI layers.
 
 **Domain logic and persistence:**
-- Purpose: Validate content, select daily practice, calculate progress, and save local state.
+- Purpose: Select daily practice, calculate progress, and save local state.
 - Location: `src/lib/`.
 - Contains: Pure scenario functions plus a small local-storage adapter.
 - Depends on: Domain types.
@@ -49,9 +49,14 @@
 ## Key Abstractions
 
 **Scenario:**
-- Purpose: One complete authored situation, safety classification, feelings, choices, and family prompt.
+- Purpose: One complete authored situation with editorial metadata, safety classification, feelings, choices, and family prompt.
 - Examples: `src/types.ts`, `src/content/scenarios.ts`.
 - Pattern: Typed content-as-data.
+
+**Content validator:**
+- Purpose: Reject structural safety errors without claiming expert approval.
+- Examples: `src/content/scenarioValidation.ts`.
+- Pattern: Pure validation over the complete catalog.
 
 **Scenario engine:**
 - Purpose: Keep selection and scoring independent from rendering.
@@ -82,7 +87,7 @@
 
 **Logging:** None by design.
 
-**Validation:** TypeScript at build time and `validateScenarios` in safety tests.
+**Validation:** TypeScript at build time and an explicit `npm run validate:content` CI gate over the full catalog.
 
 **Authentication:** None; the parent arithmetic gate is not authentication.
 

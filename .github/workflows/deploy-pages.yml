@@ -37,6 +37,9 @@ jobs:
       - name: Typecheck
         run: npm run typecheck
 
+      - name: Validate scenario content
+        run: npm run validate:content
+
       - name: Test
         run: npm test
 
