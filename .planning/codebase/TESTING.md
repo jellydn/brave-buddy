@@ -14,10 +14,12 @@
 **Run Commands:**
 ```bash
 npm test             # Run all tests once
+npm run test:coverage # Enforce core-logic coverage thresholds
 npm run validate:content # Run the focused content gate
 npm run test:e2e        # Run isolated Chromium journeys
+npm run doctor          # Run the local-only React Doctor error gate
 npx vitest           # Watch during development
-npx vitest --coverage # Coverage after adding a coverage provider
+npx vitest --coverage # Run the full unit suite with coverage
 ```
 
 ## Test File Organization
@@ -79,12 +81,19 @@ scenario.choices = scenario.choices.map((choice) => ({ ...choice, getsAdultHelp:
 
 ## Coverage
 
-**Requirements:** No percentage target is enforced for the MVP.
+**Requirements:** Core scenario validation and local domain logic enforce 85% lines, statements, and functions plus 75% branches. UI confidence comes from component and E2E behavior checks rather than line-coverage targets.
 
 **View Coverage:**
 ```bash
 npx vitest --coverage
 ```
+
+## React static analysis
+
+- React Doctor 0.9.13 runs a full scan in the read-only validation job.
+- Error diagnostics block CI. Warning diagnostics stay visible and require review.
+- `--no-score` disables score, share, and crash-reporting services. `--no-supply-chain` disables the external dependency lookup.
+- `docs/REACT_DOCTOR.md` records the reviewed baseline warnings and update process.
 
 ## Test Types
 
@@ -95,7 +104,7 @@ npx vitest --coverage
 - `ScenarioPlayer` interaction through visible feelings, choices, consequence, and adult help.
 
 **E2E Tests:**
-- Playwright runs profile persistence for both age bands, daily practice, urgent help, Toolbox persistence, parent access/reset, keyboard order and focus, reduced-motion behavior, automated WCAG scans, and a 390 px overflow smoke test.
+- Playwright runs profile persistence for both age bands, daily practice, urgent help, Toolbox save/remove persistence, parent access/reset, keyboard order and focus, reduced-motion behavior, automated WCAG scans, and a 390 px overflow smoke test.
 - Tests use fresh browser contexts and roles, labels, visible names, and ARIA state instead of implementation-detail selectors.
 - CI retains traces and screenshots only when a browser test fails.
 

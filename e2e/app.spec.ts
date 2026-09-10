@@ -65,7 +65,7 @@ test('shows trusted-adult guidance for every story in the Bullying world', async
   await expect(page.getByRole('heading', { name: 'Hi Sunny!' })).toBeVisible()
 })
 
-test('saves a response strategy and restores it in the Toolbox', async ({ page }) => {
+test('saves, restores, and removes a response strategy from the Toolbox', async ({ page }) => {
   await createProfile(page, '9-12')
   await page.getByRole('button', { name: /Teasing/ }).click()
   await answerCurrentStory(page)
@@ -77,6 +77,12 @@ test('saves a response strategy and restores it in the Toolbox', async ({ page }
 
   await expect(page.getByRole('heading', { name: 'Response Toolbox' })).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Use a short boundary: “Stop. I do not like that.”' })).toBeVisible()
+
+  await page.getByRole('button', { name: /Remove .* from Toolbox/ }).click()
+  await expect(page.getByRole('heading', { name: 'Your toolbox is ready to grow' })).toBeVisible()
+  await page.reload()
+  await page.getByRole('button', { name: 'Toolbox' }).click()
+  await expect(page.getByRole('heading', { name: 'Your toolbox is ready to grow' })).toBeVisible()
 })
 
 test('protects the parent dashboard and deletes all local progress', async ({ page }) => {

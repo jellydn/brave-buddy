@@ -5,9 +5,10 @@ interface ToolboxProps {
   ageGroup: AgeGroup
   savedStrategies: string[]
   onPractice: (scenarioId: string) => void
+  onRemove: (scenarioId: string) => void
 }
 
-export function Toolbox({ ageGroup, savedStrategies, onPractice }: ToolboxProps) {
+export function Toolbox({ ageGroup, savedStrategies, onPractice, onRemove }: ToolboxProps) {
   const saved = savedStrategies.flatMap((id) => {
     const scenario = scenarios.find((item) => item.id === id)
     const authoredStrategy = scenario?.choices.find((choice) => choice.strategy)?.strategy
@@ -23,7 +24,10 @@ export function Toolbox({ ageGroup, savedStrategies, onPractice }: ToolboxProps)
             <article className="tool-card" key={scenario.id}>
               <span className="tool-setting">{scenario.setting}</span><span className="tool-emoji" aria-hidden="true">{scenario.visual.emoji}</span>
               <h2>{strategy}</h2><p>From “{scenario.title}”</p>
-              <button type="button" onClick={() => onPractice(scenario.id)}>Practice again <span aria-hidden="true">→</span></button>
+              <div className="tool-actions">
+                <button type="button" onClick={() => onPractice(scenario.id)}>Practice again <span aria-hidden="true">→</span></button>
+                <button type="button" aria-label={`Remove “${strategy}” from Toolbox`} onClick={() => onRemove(scenario.id)}>Remove</button>
+              </div>
             </article>
           ))}
         </div>

@@ -67,6 +67,8 @@ project-root/
 - `docs/LAUNCH_READINESS_REGISTER.md`: Unassigned expert decisions, required evidence, and hard gates for production and AI work.
 - `docs/SCENARIO_COVERAGE.md`: Point-in-time coverage evidence and prioritized content gaps.
 - `docs/adr/0002-keep-curated-content-in-typed-source.md`: Current authoring-format decision and reassessment triggers.
+- `docs/SUPPORTED_BROWSERS.md`: Automated and manual browser, device, and assistive-technology targets.
+- `docs/REACT_DOCTOR.md`: Pinned React static-analysis gate, privacy controls, and reviewed baseline warnings.
 
 ## Naming Conventions
 

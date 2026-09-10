@@ -32,6 +32,10 @@ export default function App() {
     setState((current) => current.savedStrategies.includes(scenarioId) ? current : { ...current, savedStrategies: [...current.savedStrategies, scenarioId] })
   }
 
+  function removeStrategy(scenarioId: string) {
+    setState((current) => ({ ...current, savedStrategies: current.savedStrategies.filter((id) => id !== scenarioId) }))
+  }
+
   function reset() {
     clearState()
     setState({ profile: null, completions: [], savedStrategies: [] })
@@ -57,7 +61,7 @@ export default function App() {
         </nav>
       </header>
       {view === 'home' && <Home profile={state.profile} completions={state.completions} onStartMission={setActiveScenarios} onStartWorld={startWorld} />}
-      {view === 'toolbox' && <Toolbox ageGroup={state.profile.ageGroup} savedStrategies={state.savedStrategies} onPractice={(id) => setActiveScenarios(scenarios.filter((scenario) => scenario.id === id))} />}
+      {view === 'toolbox' && <Toolbox ageGroup={state.profile.ageGroup} savedStrategies={state.savedStrategies} onPractice={(id) => setActiveScenarios(scenarios.filter((scenario) => scenario.id === id))} onRemove={removeStrategy} />}
       {view === 'parent' && <ParentDashboard profile={state.profile} completions={state.completions} onReset={reset} />}
       <footer><span>Made for brave, kind kids</span><span aria-hidden="true">★</span><span>Human-authored practice stories</span></footer>
     </div>
