@@ -20,6 +20,8 @@ npm run test:e2e
 npm run build
 ```
 
+The browser suite includes automated accessibility regression scans. These checks support, but do not replace, testing with children, accessibility specialists, and assistive technology.
+
 ## Product boundaries
 
 - Human-authored content only; no generative role-play.

@@ -95,7 +95,7 @@ npx vitest --coverage
 - `ScenarioPlayer` interaction through visible feelings, choices, consequence, and adult help.
 
 **E2E Tests:**
-- Playwright runs profile persistence for both age bands, daily practice, urgent help, Toolbox persistence, parent access/reset, keyboard focus, and a 390 px overflow smoke test.
+- Playwright runs profile persistence for both age bands, daily practice, urgent help, Toolbox persistence, parent access/reset, keyboard order and focus, reduced-motion behavior, automated WCAG scans, and a 390 px overflow smoke test.
 - Tests use fresh browser contexts and roles, labels, visible names, and ARIA state instead of implementation-detail selectors.
 - CI retains traces and screenshots only when a browser test fails.
 
