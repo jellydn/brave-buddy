@@ -6,6 +6,7 @@ A safety-first learning MVP for children aged 6–12 to practice friendship, con
 
 ```bash
 npm install
+npx --no-install playwright install chromium
 npm run dev
 ```
 
@@ -15,6 +16,7 @@ npm run dev
 npm run lint
 npm run typecheck
 npm test
+npm run test:e2e
 npm run build
 ```
 

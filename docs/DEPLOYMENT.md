@@ -6,7 +6,8 @@ The application is a client-only static Vite build, so GitHub Pages is the small
 
 `.github/workflows/deploy-pages.yml` runs for pull requests, pushes to `main`, and manual dispatches.
 
-- Every event installs locked dependencies and runs lint, typecheck, tests, and the production build.
+- Every event installs locked dependencies and runs lint, typecheck, content and unit tests, browser end-to-end tests, and the production build.
+- The browser job installs only Chromium, caches the version locked by `package-lock.json`, and keeps failure traces and screenshots for seven days.
 - Pull requests stop after validation and never upload or deploy a Pages artifact.
 - Pushes to `main` and manual dispatches upload `dist/` and deploy it through GitHub's OIDC-based Pages deployment.
 - The deployment job alone receives `pages: write` and `id-token: write`; all other workflow access is read-only.

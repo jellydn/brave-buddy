@@ -9,6 +9,7 @@ project-root/
 ├── .github/workflows/    # Pull-request validation and Pages deployment
 ├── .planning/codebase/ # Current codebase map
 ├── docs/               # Product, safety, and architecture decisions
+├── e2e/                # Playwright browser journeys
 ├── public/              # Static files copied into the production build
 ├── src/
 │   ├── components/     # Screen and feature components
@@ -59,6 +60,8 @@ project-root/
 **Testing:**
 - `src/**/*.test.ts(x)`: Co-located tests.
 - `src/test/setup.ts`: DOM matchers and browser stubs.
+- `e2e/*.spec.ts`: Isolated browser journeys using accessible selectors.
+- `playwright.config.ts`: Chromium, local web server, retry, and failure-artifact settings.
 
 ## Naming Conventions
 

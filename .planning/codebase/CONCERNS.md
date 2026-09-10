@@ -71,10 +71,10 @@
 ## Test Coverage Gaps
 
 **Full navigation and persistence automation:**
-- What's not tested: Profile persistence, parent reset, and Toolbox round trip in committed tests.
-- Files: `src/App.tsx`, `src/lib/storage.ts`, `src/components/Toolbox.tsx`, `src/components/ParentDashboard.tsx`.
-- Risk: A later navigation regression could pass unit tests.
-- Priority: Medium; principal paths were manually verified in the MVP Portal.
+- Covered: Profile persistence, daily navigation, urgent guidance, Toolbox persistence, parent gate/reset, keyboard focus, and a 390 px viewport smoke test.
+- Remaining gaps: Full keyboard traversal, multiple browsers/devices, screen-reader output, reduced motion, and specialist accessibility review.
+- Files: `e2e/app.spec.ts`, `src/lib/storage.ts`.
+- Priority: Add broader accessibility and browser coverage next; complete specialist accessibility testing before launch.
 
 ---
 

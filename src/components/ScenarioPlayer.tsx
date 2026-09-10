@@ -83,7 +83,7 @@ export function ScenarioPlayer({ scenarios, ageGroup, savedStrategies, onComplet
               <div><p className="step-kicker">{choice.quality === 'helpful' ? 'STRONG CHOICE' : 'LET’S THINK AGAIN'}</p><h2>{choice.explanation[ageGroup]}</h2></div>
             </div>
             <div className="outcome-card"><span aria-hidden="true">→</span><div><strong>What happens next</strong><p>{choice.outcome[ageGroup]}</p></div></div>
-            {scenario.requiresAdultHelp && <div className="adult-help"><span aria-hidden="true">🛟</span><div><strong>GET HELP</strong><p>This situation is not yours to solve alone. Move toward safety and tell a trusted adult.</p></div></div>}
+            {scenario.requiresAdultHelp && <div className="adult-help" role="note" aria-label="Trusted adult guidance"><span aria-hidden="true">🛟</span><div><strong>GET HELP</strong><p>This situation is not yours to solve alone. Move toward safety and tell a trusted adult.</p></div></div>}
             {choice.strategy && <button type="button" className={isSaved ? 'save-button saved' : 'save-button'} onClick={() => onSaveStrategy(scenario.id)} disabled={isSaved}>{isSaved ? '✓ Saved to Toolbox' : '+ Save this strategy'}</button>}
             <button type="button" className="primary-button full" onClick={next}>{index === scenarios.length - 1 ? 'Finish adventure' : 'Next story'} <span aria-hidden="true">→</span></button>
           </section>

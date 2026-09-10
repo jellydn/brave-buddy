@@ -39,7 +39,7 @@ export function ParentDashboard({ profile, completions, onReset }: ParentDashboa
   return (
     <main className="page-shell inner-page parent-page" id="main-content">
       <div className="page-title"><span className="title-icon" aria-hidden="true">🌱</span><div><p className="eyebrow">A private, high-level view</p><h1>{profile.nickname}’s growing skills</h1><p>Progress themes are shown here. Individual answers stay private.</p></div></div>
-      <section className="parent-summary"><div><strong>{completedIds.size}</strong><span>stories practiced</span></div><div><strong>{practicedKinds.length}</strong><span>situation types</span></div><div><strong>{profile.ageGroup}</strong><span>age adaptation</span></div></section>
+      <section className="parent-summary" aria-label="Practice summary"><dl><div><dt>stories practiced</dt><dd>{completedIds.size}</dd></div><div><dt>situation types</dt><dd>{practicedKinds.length}</dd></div><div><dt>age adaptation</dt><dd>{profile.ageGroup}</dd></div></dl></section>
       <div className="parent-grid">
         <section className="dashboard-card"><p className="eyebrow">Skills practiced</p><h2>Friendship powers</h2><div className="progress-list">
           {skillNames.map((skill) => <div key={skill}><span><strong>{skill}</strong><small>{progress[skill]} points</small></span><div><i style={{ width: `${Math.min(progress[skill] * 8, 100)}%` }} /></div></div>)}
