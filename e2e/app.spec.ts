@@ -1,4 +1,4 @@
-import { expect, test, type Page } from '@playwright/test'
+import { expect, type Page, test } from '@playwright/test'
 
 async function createProfile(page: Page, ageGroup: '6-8' | '9-12', nickname = 'Sunny') {
   await page.getByLabel('Choose a fun nickname').fill(nickname)
@@ -22,6 +22,19 @@ async function answerCurrentStory(page: Page) {
 
 test.beforeEach(async ({ page }) => {
   await page.goto('/')
+})
+
+test('publishes the Brave Buddy app identity and local icon assets', async ({ page, request }) => {
+  await expect(page).toHaveTitle('Brave Buddy — Starring Generation Kids')
+  await expect(page.locator('meta[name="application-name"]')).toHaveAttribute('content', 'Brave Buddy')
+  await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content', 'https://brave-buddy.itman.fyi/assets/brave-buddy-logo.png')
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://brave-buddy.itman.fyi/')
+  await expect(page.locator('link[rel="manifest"]')).toHaveAttribute('href', '/site.webmanifest')
+
+  for (const path of ['/favicon.ico', '/favicon-32x32.png', '/apple-touch-icon.png', '/assets/brave-buddy-logo.png', '/assets/icon-192.png', '/site.webmanifest']) {
+    const response = await request.get(path)
+    expect(response.ok(), `${path} should be published`).toBe(true)
+  }
 })
 
 for (const ageGroup of ['6-8', '9-12'] as const) {
