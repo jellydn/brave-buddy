@@ -2,6 +2,8 @@
 
 This document is a product checklist, not a compliance claim. The MVP is a local prototype and must not be treated as launch-ready guidance without expert review.
 
+Singapore is the only proposed v1 launch region. The United States, United Kingdom, European Union, and all other regions require separate future gates. Confidential review evidence belongs in the private `jellydn/brave-buddy-governance` repository. Public records use redacted `SG-<AREA>-NNN` identifiers and name the exact commit and content versions reviewed.
+
 ## Current safeguards
 
 - All scenarios and outcomes are human-authored in `src/content/scenarios.ts`.
@@ -17,7 +19,7 @@ This document is a product checklist, not a compliance claim. The MVP is a local
 
 ### Safeguarding and content
 
-- A qualified child safeguarding professional must review all scenario wording, escalation instructions, and outcome framing.
+- An external child-safeguarding professional with school or child-development experience must review all scenario wording, escalation instructions, and outcome framing.
 - Define jurisdiction-specific routes for imminent danger, sexual abuse, serious abuse, and self-harm concerns.
 - Define what the product does when a child discloses real harm. The current app has no disclosure input.
 - Apply the editorial workflow in `CONTENT_WORKFLOW.md`, then record named reviewers and approvals for each scenario.
@@ -25,7 +27,7 @@ This document is a product checklist, not a compliance claim. The MVP is a local
 
 ### Privacy, consent, and retention
 
-- Complete a regional legal review for child privacy and parental consent requirements.
+- External Singapore counsel with PDPA and children's-data experience must review child privacy and parental consent requirements. The review cannot be self-approved.
 - Approve a data inventory before adding any server, account, telemetry, or support integration.
 - Set documented retention and deletion periods for every data class.
 - Design verified caregiver access, export, correction, and deletion processes where required.
@@ -34,8 +36,9 @@ This document is a product checklist, not a compliance claim. The MVP is a local
 
 ### Security and moderation
 
-- Complete security threat modeling, dependency review, penetration testing, and incident response planning.
+- Dung is the initial security and incident owner. Complete security threat modeling, dependency review, an independent penetration test, and incident response planning before launch.
 - If free text, chat, sharing, or generative features are ever added, define moderation, grooming prevention, crisis escalation, evidence retention, and human review before implementation.
+- AI role-play needs a fresh privacy and safeguarding review because free-form child disclosures change the risk.
 - A simple arithmetic parent gate is only a child-experience boundary. It is not identity, age, or consent verification.
 
 ## Data retained by this MVP
