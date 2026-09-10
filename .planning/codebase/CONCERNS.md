@@ -73,7 +73,7 @@
 
 **Full navigation and persistence automation:**
 - Covered: Profile persistence, daily navigation, urgent guidance, Toolbox persistence, parent gate/reset, keyboard focus, and a 390 px viewport smoke test.
-- Remaining gaps: Full keyboard traversal, multiple browsers/devices, screen-reader output, reduced motion, and specialist accessibility review.
+- Remaining gaps: Multiple browsers/devices, screen-reader output, full touch-target and contrast review, and specialist accessibility review.
 - Files: `e2e/app.spec.ts`, `src/lib/storage.ts`.
 - Priority: Add broader accessibility and browser coverage next; complete specialist accessibility testing before launch.
 
