@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it } from 'vitest'
 import type { AppState } from '../types'
-import { emptyState, loadState, saveState, STORAGE_KEY, STORAGE_VERSION } from './storage'
+import { clearState, emptyState, loadState, saveState, STORAGE_KEY, STORAGE_VERSION } from './storage'
 
 const state: AppState = {
   profile: { nickname: 'Sunny', avatar: '🦊', ageGroup: '9-12' },
@@ -22,6 +22,15 @@ describe('versioned local storage', () => {
 
     expect(readStoredValue()).toEqual({ version: STORAGE_VERSION, state })
     expect(loadState()).toEqual(state)
+  })
+
+  it('removes all local application state', () => {
+    saveState(state)
+
+    clearState()
+
+    expect(localStorage.getItem(STORAGE_KEY)).toBeNull()
+    expect(loadState()).toEqual(emptyState)
   })
 
   it('migrates the legacy unversioned MVP record', () => {

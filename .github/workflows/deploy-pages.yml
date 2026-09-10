@@ -34,6 +34,9 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      - name: Scan React code locally
+        run: npm run doctor
+
       - name: Typecheck
         run: npm run typecheck
 
@@ -42,6 +45,9 @@ jobs:
 
       - name: Test
         run: npm test
+
+      - name: Check core logic coverage
+        run: npm run test:coverage
 
       - name: Build
         run: npm run build
