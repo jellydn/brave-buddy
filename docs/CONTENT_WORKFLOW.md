@@ -45,7 +45,13 @@ Change the status to `withdrawn`, stop selecting the scenario in the application
 - **Accessibility/content reviewer:** checks reading load and accessible wording.
 - **Release owner:** verifies recorded approval and controls publication or withdrawal.
 
-Named people and launch regions are not set in this repository. Project owners must assign them before any scenario is marked `approved` or `published`.
+Singapore is the only proposed v1 launch region. A named external child-safeguarding professional with school or child-development experience must review the content. Dung is final launch authority only after all required expert evidence exists. The United States, United Kingdom, European Union, and other regions need separate future review gates.
+
+## Approval evidence
+
+Use `SG-SAFE-NNN` identifiers for Singapore safeguarding evidence. Confidential records belong in the private `jellydn/brave-buddy-governance` repository. Public pull requests and this repository contain only the evidence identifier, a redacted status, and enough source linkage to audit the release.
+
+Every review and approval must name the exact full application commit SHA and every scenario ID and `editorial.version` reviewed. A later commit or content version is not approved unless the record explicitly includes it. Do not mark content `approved` or `published` from a verbal statement, automated test, or unattributed summary.
 
 ## Automated checks
 

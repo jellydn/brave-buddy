@@ -6,7 +6,8 @@
 
 **Content editorial workflow:**
 - Issue: The repository defines lifecycle and version metadata, but the MVP scenarios remain `draft` with no named expert approval.
-- Files: `src/content/scenarios.ts`, `docs/CONTENT_WORKFLOW.md`.
+- Files: `src/content/scenarios.ts`, `docs/CONTENT_WORKFLOW.md`, `docs/SCENARIO_COVERAGE.md`.
+- Coverage: The audit records current category, setting, age-band, skill, and editorial gaps.
 - Impact: Structural checks are available, but the content is not ready for a responsible public launch.
 - Fix approach: Assign qualified reviewers and record completed review evidence before marking content approved or published.
 
